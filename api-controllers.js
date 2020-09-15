@@ -63,7 +63,7 @@ function getProfile(profile_id, membership_type, callback) {
         .then(function (response) {
             var player = {
                 id: response.data.Response.profile.data.userInfo.membershipId,
-                display_name: response.data.Response.profile.data.userInfo.displayName,
+                displayName: response.data.Response.profile.data.userInfo.displayName,
                 characters: []
             };
 

@@ -36,7 +36,7 @@ var api_controllers = require('./api-controllers');
 /**
  * Exotic Quest API endpoint
  */
-app.get('/api/exotic-quests', api_controllers.exotic_quests);
+app.get('/api/exotic_quests', api_controllers.exotic_quests);
 
 
 /**
