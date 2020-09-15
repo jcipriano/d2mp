@@ -1,0 +1,43 @@
+{
+    membershipId: '4611686018430483874',
+    membershipType: 2,
+    characterId: '2305843009306584233',
+    dateLastPlayed: '2020-06-11T06:24:02Z',
+    minutesPlayedThisSession: '48',
+    minutesPlayedTotal: '2442',
+    light: 873,
+    stats: {
+      '144602215': 32,
+      '392767087': 46,
+      '1735777505': 21,
+      '1935470627': 873,
+      '1943323491': 34,
+      '2996146975': 47,
+      '4244567218': 32
+    },
+    raceHash: 898834093,
+    genderHash: 3111576190,
+    classHash: 671679327,
+    raceType: 2,
+    classType: 1,
+    genderType: 0,
+    emblemPath: '/common/destiny2_content/icons/e18460eb6f1ac27f789f8a6dcfa6edee.jpg',
+    emblemBackgroundPath: '/common/destiny2_content/icons/20bad7321c6585c7eeb2e47ca214f322.jpg',
+    emblemHash: 1409726986,
+    emblemColor: { red: 0, green: 0, blue: 0, alpha: 255 },
+    levelProgression: {
+      progressionHash: 1716568313,
+      dailyProgress: 0,
+      dailyLimit: 0,
+      weeklyProgress: 0,
+      weeklyLimit: 0,
+      currentProgress: 0,
+      level: 50,
+      levelCap: 50,
+      stepIndex: 50,
+      progressToNextLevel: 0,
+      nextLevelAt: 0
+    },
+    baseCharacterLevel: 50,
+    percentToNextLevel: 0
+  }
