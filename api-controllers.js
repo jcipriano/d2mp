@@ -20,7 +20,7 @@ api_controllers.exotic_quests = function (req, res) {
     //     getProfile(player_id);
     // });
 
-    getProfile(req.query.player_id, req.query.membership_type ? req.query.membership_type : 3, function (player_data) {
+    getProfile(req.params.player_id, req.params.membership_type ? req.params.membership_type : 3, function (player_data) {
         res.send(player_data);
     });
 };
@@ -144,23 +144,22 @@ function processQuests (player_characters) {
             var processed_quest = {};
 
             // new quests have quest line data in 'setData'
-            if (quest.setData) {
-                processed_quest.name = quest.setData.questLineName;
-                // _.forEach(quest.setData.itemList, function (item) {
-                //     // console.log(manifest_exotic_quests[item.itemHash]);
-                // });
-            }
+            // if (quest.setData) {
+            //     processed_quest.id = quest.hash;
+            //     processed_quest.name = quest.setData.questLineName;
+            // }
             // old quest have quest line data tied to 'questlineItemHash'
-            else {
+            //else {
                 // check if quest has a quest line
                 if (quest.objectives && quest.hash != quest.objectives.questlineItemHash && quest.objectives.questlineItemHash != 0) {
                     var quest_line = manifest.items.exotic_quests[quest.objectives.questlineItemHash]
-                    if (!quest_line) console.log(quest.hash, quest.displayProperties.name)
+                    processed_quest.id = quest_line.hash;
                     processed_quest.name = quest_line.displayProperties.name;
                 } else {
+                    processed_quest.id = quest.hash;
                     processed_quest.name = quest.displayProperties.name
                 }
-            }
+            //}
 
             quest_data.push(processed_quest);
         });
