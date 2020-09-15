@@ -40,6 +40,12 @@ app.get('/api/:membership_type/players/:player_id/quests/exotic', api_controller
 
 
 /**
+ * Exotic Quest API endpoint
+ */
+app.get('/api/players/all/quests/exotic', api_controllers.team_exotic_quests);
+
+
+/**
  * Displays Destiny 2 manifest URLs
  */
 app.get('/api/manifest', api_controllers.manifest);

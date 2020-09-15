@@ -1,4 +1,5 @@
 const axios = require('axios').default;
+const { merge } = require('lodash');
 const _ = require('lodash');
 const util = require('util');
 
@@ -23,6 +24,36 @@ api_controllers.exotic_quests = function (req, res) {
     getProfile(req.params.player_id, req.params.membership_type ? req.params.membership_type : 3, function (player_data) {
         res.send(player_data);
     });
+};
+
+
+/**
+ * Exotic Quest API endpoint contoller
+ */
+api_controllers.team_exotic_quests = function (req, res) {
+
+    var data = {
+        quests: {
+            exotic: []
+        },
+        players: []
+    };
+
+    _.forEach(config.players, function (player) {
+        getProfile(player.id, player.membership_type, function (player_data) {
+            
+            data.players.push(player_data);
+
+            _.forEach(player_data.characters, function (character) {
+                _.merge(data.quests.exotic, character.quests.exotic);
+            });
+
+            if (data.players.length == config.players.length) {
+                res.send(data);
+            }
+        });
+    });
+
 };
 
 

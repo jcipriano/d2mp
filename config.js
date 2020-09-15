@@ -9,23 +9,23 @@ module.exports = {
     // player IDs
     players: [
         {
-            type: 2,
+            membership_type: 2,
             id: '4611686018430483874' // R3DB71ND
         },
         {
-            type: 3,
+            membership_type: 3,
             id: '4611686018500974539' // j00k
         },
         {
-            type: 3,
+            membership_type: 3,
             id: '4611686018501333995' // Straega
         },
         {
-            type: 3,
+            membership_type: 3,
             id: '4611686018482757262' // AlphaQUhp
         },
         {
-            type: 3,
+            membership_type: 3,
             id: '4611686018500791548' // Zuch
         }
     ]
