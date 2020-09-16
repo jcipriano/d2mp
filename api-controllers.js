@@ -135,6 +135,7 @@ function getAllPlayers (callback) {
             if (data.players.length == config.players.length) {
                 console.log('getAllPlayers: complete');
                 data.quests.exotic = _.orderBy(data.quests.exotic, ['id'],['asc']);
+                data.players = _.orderBy(data.players, ['id'],['asc']);
                 callback(data);
             }
         });

@@ -1,4 +1,5 @@
 <% include ../partials/header.ejs %>
+<% include ../partials/nav.ejs %>
 
     <div class="container-fluid">
         <div class="row">
@@ -18,7 +19,7 @@
                         <%= player.displayName %> (<%= player.characters[0].info.classType %>)
                     </div>
                     <% player.characters[0].quests.exotic.forEach(function(quest){ %>
-                    <div class="list-group-item <% if (quest.active) { %>list-group-item-success<% } else { %>list-group-item-light<% } %>"><%= quest.name %></div>
+                    <div class="list-group-item list-group-item<% if (quest.active) { %>-success<% } else { %>-default<% } %>"><%= quest.name %></div>
                     <% }); %>
                 </div>
             </div>
