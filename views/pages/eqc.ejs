@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm">
+                <div class="list-group">
+                    <div class="list-group-item active">Quests</div>
+                    <% quests.exotic.forEach(function(quest){ %>
+                    <div class="list-group-item"><img class="item-image" src="<%= quest.icon_image %>" /><%= quest.name %></div>
+                    <% }); %>
+                </div>
+            </div>
+            <% players.forEach(function(player){ %>
+            <div class="col-sm">
+                <div class="list-group">
+                    <div class="list-group-item active">
+                        <%= player.displayName %> (<%= player.characters[0].info.classType %>)
+                    </div>
+                    <% player.characters[0].quests.exotic.forEach(function(quest){ %>
+                    <div class="list-group-item <% if (quest.active) { %>list-group-item-success<% } else { %>list-group-item-light<% } %>"><%= quest.name %></div>
+                    <% }); %>
+                </div>
+            </div>
+            <% }); %>
+          
+        </div>
+    </div>
+
+<% include ../partials/footer.ejs %>
