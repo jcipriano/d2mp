@@ -19,7 +19,7 @@
                         <%= player.displayName %> (<%= player.characters[0].info.classType %>)
                     </div>
                     <% player.characters[0].quests.exotic.forEach(function(quest){ %>
-                    <div class="list-group-item list-group-item<% if (quest.active) { %>-success<% } else { %>-default<% } %>"><%= quest.name %></div>
+                    <div class="list-group-item list-group-item<% if (quest.active) { %>-success<% } else { %>-default disabled<% } %>"><%= quest.name %></div>
                     <% }); %>
                 </div>
             </div>
