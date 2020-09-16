@@ -15,15 +15,13 @@ app.set('view engine', 'ejs')
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
+var api_controllers = require('./api-controllers');
+
+
 /**
  * Index page of webapp
  */
-app.get('/', function (req, res) {
-  res.render('pages/index')
-});
-
-
-var api_controllers = require('./api-controllers');
+app.get('/', api_controllers.eqc_page);
 
 
 /**
