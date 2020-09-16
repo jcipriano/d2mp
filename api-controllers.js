@@ -110,7 +110,8 @@ function getProfile(profile_id, membership_type, callback) {
                     info: {
                         classType: manifest.character.class[character_profile.classType],
                         gender: manifest.character.gender[character_profile.genderType],
-                        race: manifest.character.race[character_profile.raceType]
+                        race: manifest.character.race[character_profile.raceType],
+                        emblem_image: config.request.media_root + character_profile.emblemPath
                     },
                     stats: {
                         dateLastPlayed: character_profile.dateLastPlayed,
@@ -181,14 +182,16 @@ function processQuests (player_characters) {
             // }
             // old quest have quest line data tied to 'questlineItemHash'
             //else {
-                // check if quest has a quest line
+                // if quest has a quest line, use that data
                 if (quest.objectives && quest.hash != quest.objectives.questlineItemHash && quest.objectives.questlineItemHash != 0) {
                     var quest_line = manifest.items.exotic_quests[quest.objectives.questlineItemHash]
                     processed_quest.id = quest_line.hash;
                     processed_quest.name = quest_line.displayProperties.name;
+                    processed_quest.icon_image = config.request.media_root + quest_line.displayProperties.icon;
                 } else {
                     processed_quest.id = quest.hash;
                     processed_quest.name = quest.displayProperties.name
+                    processed_quest.icon_image = config.request.media_root + quest.displayProperties.icon;
                 }
             //}
 
