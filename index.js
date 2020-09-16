@@ -23,14 +23,13 @@ app.get('/', function (req, res) {
 });
 
 
+var api_controllers = require('./api-controllers');
+
+
 /**
  * Exotic Quest Coordinator View
  */
-app.get('/eqc', function (req, res) {
-  res.render('pages/index')
-});
-
-var api_controllers = require('./api-controllers');
+app.get('/eqc', api_controllers.eqc_page);
 
 
 /**
@@ -49,6 +48,12 @@ app.get('/api/players/all/quests/exotic', api_controllers.team_exotic_quests);
  * Displays Destiny 2 manifest URLs
  */
 app.get('/api/manifest', api_controllers.manifest);
+
+
+/**
+ * Displays Destiny 2 items
+ */
+app.get('/api/items/:item_id', api_controllers.get_item);
 
 
 /**
