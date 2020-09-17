@@ -10,6 +10,10 @@
   border: #666 1px solid;
 }
 
+.image-col {
+  width: 100px;
+}
+
 .list-group {
   border-radius: 0px;
 }
@@ -41,6 +45,18 @@
 
 .dropdown {
   display: inline;
+}
+.disabled img {
+  opacity: 50%;
+}
+
+.character-list-item {
+  line-height: 60px;
+  font-size: 14px;
+}
+
+.character-description {
+  margin-left: 70px;
 }
 
 .jumbotron {

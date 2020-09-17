@@ -3,28 +3,26 @@
 
     <div class="container-fluid">
         <div class="row no-gutters">
-
-            <div class="col-sm">
-                <div class="list-group">
-                    <div class="list-group-item active">Quests</div>
-                    <% quests.exotic.forEach(function(quest){ %>
-                    <div class="list-group-item"><img class="item-image" src="<%= quest.icon_image %>" /><%= quest.name %></div>
-                    <% }); %>
-                </div>
-            </div>
             <% players.forEach(function(player){ %>
             <div class="col-sm">
                 <div class="list-group">
                     <div class="list-group-item active">
-                        <%= player.displayName %> (<%= player.characters[0].info.classType %>)
+                        <%= player.displayName %>
+                    </div>
+                    <div class="list-group-item character-list-item" style="background-image: url(<%= player.characters[0].info.emblemBackgroundImage %>);">
+                        <span class="character-description"><%= player.characters[0].info.classType %> <%= player.characters[0].info.gender %> <%= player.characters[0].info.race %>
+                        <%= player.characters[0].stats.lightLevel %> 
+                        </span>
                     </div>
                     <% player.characters[0].quests.exotic.forEach(function(quest){ %>
-                    <div class="list-group-item list-group-item<% if (quest.active) { %>-success<% } else { %>-default disabled<% } %>"><%= quest.name %></div>
+                    <div class="list-group-item list-group-item<% if (quest.active) { %>-success<% } else { %>-default disabled<% } %>">
+                        <img class="item-image" src="<%= quest.icon_image %>" />
+                        <%= quest.name %>
+                    </div>
                     <% }); %>
                 </div>
             </div>
             <% }); %>
-          
         </div>
     </div>
 
