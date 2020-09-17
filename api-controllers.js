@@ -175,7 +175,8 @@ function getProfile(profile_id, membership_type, callback) {
                         classType: manifest.character.class[character_profile.classType],
                         gender: manifest.character.gender[character_profile.genderType],
                         race: manifest.character.race[character_profile.raceType],
-                        emblem_image: config.request.media_root + character_profile.emblemPath
+                        emblemImage: config.request.media_root + character_profile.emblemPath,
+                        emblemBackgroundImage: config.request.media_root + character_profile.emblemBackgroundPath
                     },
                     stats: {
                         dateLastPlayed: character_profile.dateLastPlayed,

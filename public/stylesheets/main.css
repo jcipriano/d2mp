@@ -10,6 +10,10 @@
   border: #666 1px solid;
 }
 
+.list-group {
+  border-radius: 0px;
+}
+
 .list-group-item {
   line-height: 45px;
   white-space: nowrap;
@@ -33,6 +37,10 @@
  display: inline;
  font-size: 18px;
  font-weight: bolder;
+}
+
+.dropdown {
+  display: inline;
 }
 
 .jumbotron {
