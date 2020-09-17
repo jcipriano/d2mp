@@ -4,24 +4,24 @@
     <div class="container-fluid">
         <div class="row no-gutters">
             <% players.forEach(function(player){ %>
-            <div class="card col-sm">
+            <div id="card-<%= player.id %>" class="card col-sm">
                 <div class="card-header active">
                     <span><%= player.displayName %></span>
-                    <div class="dropdown float-sm-right">
+                    <div class="dropdown character-dropdown float-sm-right">
                         <span class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           &nbsp;
                         </span>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <div class="dropdown-header">Choose character (not working)</div>
-                            <% player.characters.forEach(function(character){ %>
-                            <div class="dropdown-item"><%= character.info.classType %> <%= character.info.gender %> <%= character.info.race %></div>
+                            <div class="dropdown-header">Choose character:</div>
+                            <% player.characters.forEach(function(character, index){ %>
+                            <div id="dropdown-item-<%= character.id %>" class="dropdown-item character-dropdown-item <% if (index==0) { %>active<% } %>"  data-player-id="<%= player.id %>" data-character-id="<%= character.id %>"><%= character.info.classType %> <%= character.info.gender %> <%= character.info.race %></div>
                             <% }); %>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <% player.characters.forEach(function(character){ %>
-                    <div id="<%= character.id %>" class="list-group">
+                    <% player.characters.forEach(function(character, index){ %>
+                    <div id="quest-list-<%= character.id %>" class="list-group <% if (index>0) { %>list-group-hidden<% } %>">
                         <div class="list-group-item character-list-item" style="background-image: url(<%= character.info.emblemBackgroundImage %>);">
                             <span class="character-description">
                             <%= character.info.classType %> <%= character.info.gender %> <%= character.info.race %>
@@ -42,4 +42,16 @@
         </div>
     </div>
 
+    <script>
+        $('.character-dropdown-item').on('click', function () {
+            $(this).parent().find('.character-dropdown-item').removeClass('active');
+            $(this).addClass('active');
+
+            var playerId = $(this).data('player-id');
+            var characterId = $(this).data('character-id');
+
+            $('#card-'+playerId).find('.list-group').hide();
+            $('#quest-list-'+characterId).show();
+        });
+    </script>
 <% include ../partials/footer.ejs %>

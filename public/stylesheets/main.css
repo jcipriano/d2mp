@@ -33,6 +33,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   line-height: 40px;
+  white-space: nowrap;
   border: 0px;
   border-color: #222;
   border-radius: 0;;
@@ -40,11 +41,16 @@ body {
 
 .card-header .dropdown {
   font-size: 20px;
+  white-space: nowrap;
   color: #FFF;
 }
 
 .card-body {
   padding: 0;
+}
+
+.list-group-hidden {
+  display: none;
 }
 
 .list-group {
