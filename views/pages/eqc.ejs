@@ -17,7 +17,7 @@
                     <% player.characters[0].quests.exotic.forEach(function(quest){ %>
                     <div class="list-group-item list-group-item<% if (quest.active) { %>-success<% } else { %>-default disabled<% } %>">
                         <img class="item-image" src="<%= quest.icon_image %>" />
-                        <%= quest.name %>
+                        <span><%= quest.name %></span>
                     </div>
                     <% }); %>
                 </div>

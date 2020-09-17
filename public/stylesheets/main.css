@@ -1,3 +1,7 @@
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 .container-fluid {
   margin: 15px 0;
   font-size: 14px;
@@ -21,11 +25,13 @@
 .list-group-item {
   line-height: 45px;
   white-space: nowrap;
+  border-color: #222;
 }
 
 .list-group-item.active {
   font-size: 18px;
   font-weight: bold;
+  border-color: #222;
 }
 
 .list-group-item-success {
