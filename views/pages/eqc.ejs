@@ -12,9 +12,10 @@
                           &nbsp;
                         </span>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-header">Choose character (not working)</div>
+                            <% player.characters.forEach(function(character){ %>
+                            <div class="dropdown-item"><%= character.info.classType %> <%= character.info.gender %> <%= character.info.race %></div>
+                            <% }); %>
                         </div>
                     </div>
                 </div>

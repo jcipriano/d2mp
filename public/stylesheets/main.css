@@ -86,6 +86,10 @@ body {
   border: #666 1px solid;
 }
 
+.dropdown-item {
+  cursor: pointer;
+}
+
 .jumbotron {
 
   padding-bottom: 80px; }
