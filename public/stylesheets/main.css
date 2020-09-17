@@ -1,42 +1,10 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
+  background-color: #111;
 }
 
-.container-fluid {
-  margin: 15px 0;
-  font-size: 14px;
-}
-
-.item-image {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  border: #666 1px solid;
-}
-
-.image-col {
-  width: 100px;
-}
-
-.list-group {
-  border-radius: 0px;
-}
-
-.list-group-item {
-  line-height: 45px;
-  white-space: nowrap;
-  border-color: #222;
-}
-
-.list-group-item.active {
-  font-size: 18px;
-  font-weight: bold;
-  border-color: #222;
-}
-
-.list-group-item-success {
-  background-color: #00bc8c;
-  color: #FFF;
+.col-sm {
+  margin-right:1px;
 }
 
 .navbar {
@@ -49,9 +17,55 @@ body {
  font-weight: bolder;
 }
 
-.dropdown {
-  display: inline;
+.container-fluid {
+  margin: 15px 0;
+  font-size: 14px;
 }
+
+.card {
+  border: 1px;
+  border-color: #FFF;
+  border-radius: 0;
+  background: none;
+}
+
+.card-header.active {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 40px;
+  border: 0px;
+  border-color: #222;
+  border-radius: 0;;
+}
+
+.card-header .dropdown {
+  font-size: 20px;
+  color: #FFF;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.list-group {
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.list-group-item, .list-group-item.disabled, .list-group-item-success {
+  line-height: 45px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-position: -1px 0px;
+  margin: 1px 0 0 0;
+  border-width: 0px;
+}
+
+.list-group-item-success {
+  background-color: #00bc8c;
+  color: #FFF;
+}
+
 .disabled img {
   opacity: 50%;
 }
@@ -63,6 +77,13 @@ body {
 
 .character-description {
   margin-left: 70px;
+}
+
+.item-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border: #666 1px solid;
 }
 
 .jumbotron {
